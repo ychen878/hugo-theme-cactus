@@ -104,6 +104,21 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
 <script>
+    const macros = {
+	"\\R": "\\mathbb{R}",
+        "\\N": "\\mathbb{N}",
+        "\\B": "\\mathbb{B}",
+        "\\I": "\\mathbb{I}",
+        "\\Z": "\\mathbb{Z}",
+        "\\Q": "\\mathbb{Q}",
+        "\\p": "\\partial",
+	"\\vec": "\\mathbf{#1}",
+        "\\vx": "\\vec{x}",
+        "\\vy": "\\vec{y}",
+        "\\norm": "\\left\\lVert{#1}\\right\\rVert",
+	"\\Prob": "\\mathbb{P}{#1}",
+	"\\Exp": "\\mathbb{E}[{#1}]",
+    };
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
           // customised options
@@ -115,7 +130,8 @@
               {left: '\\[', right: '\\]', display: true}
           ],
           // • rendering keys, e.g.:
-          throwOnError : false
+          throwOnError : false,
+          macros: macros
         });
     });
 </script>
